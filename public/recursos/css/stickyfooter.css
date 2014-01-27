@@ -1,0 +1,36 @@
+/* Sticky footer styles
+ * fonte: http://getbootstrap.com/examples/sticky-footer/
+
+    <!-- Layout Structure -->
+    <body>
+        <!-- Wrap all page content here -->
+        <div id="wrap">
+            <!-- Begin page navigation -->
+            <nav id="nav-container"></nav>
+            <!-- Begin page content -->
+            <div id="main-container" class="container">
+                <!-- WEBSITE CONTENT -->
+            </div>
+        </div>
+        <footer id="footer"></footer>
+    </body>
+ */
+html, body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -100px;
+  /* Pad bottom by footer height */
+  padding: 0 0 100px;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+  height: 100px;
+}

@@ -1,0 +1,51 @@
+<div class="row container">
+    <h1>ZfcTwitterBootstrap</h1>
+    <hr/>
+
+    <h2>Twt Alerts</h2>
+    <?php
+    echo $this->ztbAlert('This is an generic alert');
+    // additional parameters: block level and class
+    echo $this->ztbAlert('This is an alert with custom class', true, 'custom-class');
+
+    // explicit types: info, error, success, warning
+    echo $this->ztbAlert()->success('This is an alert success');
+    echo $this->ztbAlert()->info('This is an alert info');
+    echo $this->ztbAlert()->error('This is an alert error');
+    echo $this->ztbAlert()->warning('This is an alert warning');
+    ?>
+    <h2>Twt Badges</h2>
+    <?php
+    echo $this->ztbBadge('This is a badge');
+    // additional parameters: class
+    echo $this->ztbBadge('This is a badge', 'info');
+
+    // explicit usage
+    // explicit types: info, important, inverse, success, warning
+    echo $this->ztbBadge()->info('This is a badge');
+    ?>
+    <h2>Twt Labels</h2>
+    <?php
+    echo $this->ztbLabel('This is a label');
+    // additional parameters: class
+    echo $this->ztbLabel('This is a label', 'info');
+
+    // explicit usage
+    // explicit types: info, important, inverse, success, warning
+    echo $this->ztbLabel()->info('This is a label');
+    ?>
+    <h2>Twt Forms <small>não use isto... está incompleto</small></h2>
+    <?php
+    // render a whole form
+    echo $this->ztbForm($this->form);
+    /*
+    // render element by element
+    $form = $this->form;
+    $form->prepare();
+    echo $this->form()->openTag($form);
+    echo $this->ztbFormElement($this->form->get('nome'));
+    echo $this->ztbFormElement($this->form->get('descricao'));
+    echo $this->form()->closeTag();
+    */
+    ?>
+</div>

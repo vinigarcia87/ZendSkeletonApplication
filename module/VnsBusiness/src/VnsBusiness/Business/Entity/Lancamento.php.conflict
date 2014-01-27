@@ -1,0 +1,63 @@
+<?php
+namespace VnsBusiness\Business\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Lançamentos bancários
+ *
+ * @ORM\Entity
+ * @ORM\Table(name="tb_lancamentos")
+ * @property int $id
+ * @property date $data
+ * @property string $descricao
+ * @property Natureza $natureza
+ * @property Categoria $categoria
+ * @property decimal $valor
+ */
+class Lancamento
+{
+    /**
+     * Primary Identifier
+     *
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     * @var integer
+     * @access protected
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(type="date")
+     * @var date
+     * @access protected
+     */
+    private $data;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     * @var string
+     * @access protected
+     */
+    private $descricao;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Natureza", inversedBy="lancamentos")
+     * @ORM\JoinColumn(name="id_natureza", referencedColumnName="id")
+     **/
+    private $natureza;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Categoria", inversedBy="lancamentos")
+     * @ORM\JoinColumn(name="id_categoria", referencedColumnName="id")
+     **/
+    private $categoria;
+
+    /**
+     * @ORM\Column(type="decimal", precision=2, scale=10, nullable=false)
+     * @var decimal
+     * @access protected
+     */
+    private $valor;
+}

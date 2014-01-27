@@ -1,0 +1,18 @@
+<div class="row container">
+    <h1>Experimentos Gerais</h1>
+    <hr/>
+    <?php \Zend\Debug\Debug::dump( $foo ) ?>
+</div>
+<div class="row container">
+    <?php
+        $form = $this->form;
+        $form->setAttribute('action', $this->url('vnsexperimental',array('controller' => 'doctrine')));
+        $form->prepare();
+        echo $this->form()->openTag($form);
+        $fsFoo = $form->get('foo');
+        echo $this->formRow($fsFoo->get('nome')) . '<br/>';
+        echo $this->formRow($fsFoo->get('descricao')) . '<br/>';
+        echo $this->formRow($form->get('submit'));
+        echo $this->form()->closeTag();
+    ?>
+</div>

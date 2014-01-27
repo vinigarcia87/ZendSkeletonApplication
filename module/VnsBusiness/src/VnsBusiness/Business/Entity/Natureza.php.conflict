@@ -1,0 +1,44 @@
+<?php
+namespace VnsBusiness\Business\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+
+/**
+ * Natureza de um lançamento
+ *
+ * @ORM\Entity
+ * @ORM\Table(name="tb_naturezas")
+ * @property int $id
+ * @property string $descricao
+ * @property ArrayCollection $lancamentos
+ */
+class Natureza
+{
+    /**
+     * Primary Identifier
+     *
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     * @var integer
+     * @access protected
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     * @var string
+     * @access protected
+     */
+    private $descricao;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Lancamento", mappedBy="natureza")
+     **/
+    private $lancamentos;
+
+    public function __construct() {
+        $this->lancamentos = new ArrayCollection();
+    }
+}

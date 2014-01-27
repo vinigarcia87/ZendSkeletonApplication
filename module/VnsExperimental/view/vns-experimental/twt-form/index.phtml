@@ -1,0 +1,78 @@
+<div class="row container">
+    <h1>Twitter from Bootstrap Form</h1>
+    <hr/>
+    <?php
+    //Prepare Display options to fine tune the form presentation
+    //This is optional, your form can be rendered without any display options
+    $displayOptions = array(
+        //The class attribute added to the form tag
+        //'class' => 'custom-css-class',
+        'elements' => array(
+            'nome' => array(
+                'class'    => 'col-md-3',
+                'required' => true,
+            ),
+            'descricao' => array(
+                'class'       => 'col-md-4',
+                'rows'        => 4,
+                'required'    => false,
+            ),
+            'submit'          => array(
+                'class'       => 'btn btn-large btn-success',
+            ),
+            'reset'           => array(
+                'class'       => 'btn btn-danger',
+            ),
+        ),
+    );
+
+    $form = $this->form->prepare();
+    echo $this->formTwb($form, \DluTwBootstrap\Form\FormUtil::FORM_TYPE_HORIZONTAL, $displayOptions);
+    /*
+     //Controlled form display
+    //This is the recommended way of displaying the form since you have full control over its presentation
+    //As implemented here it produces exactly the same output as the default (one-line) form display above
+    //I.e. the rest of this view script produces the same output as echo $this->formTwb($form, $formType, $displayOptions);
+    $fieldSet1 = $form->get('fsOne');
+    $fieldSet2 = $form->get('fsTwo');
+    //Form opening tag
+    echo $this->formTwb()->openTag($form, $formType);
+    //Hidden element
+    echo $this->formRowTwb($form->get('hiddenField'));
+    //Fieldset One - opening tag
+    echo $this->formFieldsetTwb()->openTag($fieldSet1, $formType, $displayOptions['fieldsets']['fsOne']);
+    //Text element
+    echo $this->formRowTwb($fieldSet1->get('text'), $formType, $displayOptions['fieldsets']['fsOne']['elements']['text']);
+    //Password element
+    echo $this->formRowTwb($fieldSet1->get('password'), $formType, $displayOptions['fieldsets']['fsOne']['elements']['password']);
+    //Textarea element
+    echo $this->formRowTwb($fieldSet1->get('textarea'), $formType, $displayOptions['fieldsets']['fsOne']['elements']['textarea']);
+    //Fieldset One - closing tag
+    echo $this->formFieldsetTwb()->closeTag();
+    //Fieldset Two - rendered en bloc
+    echo $this->formFieldsetTwb($fieldSet2, $formType, $displayOptions['fieldsets']['fsTwo'], true, true, true);
+    //Remaining elements outside of any fieldsets
+    //Select element
+    echo $this->formRowTwb($form->get('select'), $formType, $displayOptions['elements']['select']);
+    //Multi Select element
+    echo $this->formRowTwb($form->get('multiSelect'), $formType, $displayOptions['elements']['multiSelect']);
+    //File element
+    echo $this->formRowTwb($form->get('file'), $formType, $displayOptions['elements']['file']);
+    //Text element with append/prepend text
+    echo $this->formRowTwb($form->get('textAp'), $formType, $displayOptions['elements']['textAp']);
+    //Text element with append/prepend icon
+    echo $this->formRowTwb($form->get('iconAp'), $formType, $displayOptions['elements']['iconAp']);
+    //CSRF
+    echo $this->formRowTwb($form->get('csrf'));
+    //Form actions
+    $actions = array(
+        $form->get('submitBtn'),
+        $form->get('resetBtn'),
+        $form->get('plainBtn'),
+    );
+    echo $this->formActionsTwb($actions, $formType, $displayOptions['elements']);
+    //Form close tag
+    echo $this->formTwb()->closeTag();
+    */
+    ?>
+</div>

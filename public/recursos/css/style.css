@@ -1,0 +1,111 @@
+body {
+    background: url("../img/texturas/subtle_grunge.png") repeat scroll right center transparent;
+    font-family: "Ubuntu","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 12px;
+}
+
+#main-container {
+    background-color: #fff;
+}
+
+/* Corrige um pixel de altura na navbar */
+.navbar-nav > li > a {
+    line-height: 21px;
+}
+/* Retira margem da navbar */
+.navbar {
+    margin-bottom: 0;
+}
+
+/* Quadro jumbotron */
+.jumbotron {
+    /* background-color: #FFFFFF; */
+    font-size: 18px;
+}
+
+/**
+ * Fixes and other re-usables styles
+ */
+
+/* Fix para o main-container ocupar toda a tela */
+#wrap {
+    background-color: #fff;
+    height: 100%;
+    min-height: 100%;
+}
+#main-container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/* Box-sizing resets
+ *
+ * Reset individual elements or override regions to avoid conflicts due to
+ * global box model settings of Bootstrap.
+ */
+.reset-box-sizing,
+.reset-box-sizing *,
+.reset-box-sizing *:before,
+.reset-box-sizing *:after {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+/* Justifica um texto */
+.text-justify {
+    text-align: justify;
+}
+
+/* Cor verde padrao do zf2 */
+.zf-green {
+    color: #68b604;
+}
+
+/* Rodape com fundo escuro e logo da Storms */
+footer {
+    padding-top: 25px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #AE3910;
+}
+/* Melhorar o css da logo da storms para que seja responsivo */
+#logo-storms {
+    /* margin: -20px auto 0; */
+    margin: -20px 10px 0;
+}
+@media (max-width:768px) {
+    #logo-storms {
+        margin: 0 auto;
+        margin: -40px auto 0;
+    }
+}
+#logo-storms .a {
+    background: url("../img/logo/bn_storms.png") no-repeat scroll right center transparent;
+    height: 45px;
+}
+
+/*
+.btn-success {
+  background-color: #57a900;
+  background-image: -moz-linear-gradient(top, #70d900, #57a900);
+  background-image: -ms-linear-gradient(top, #70d900, #57a900);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#70d900), to(#57a900));
+  background-image: -webkit-linear-gradient(top, #70d900, #57a900);
+  background-image: -o-linear-gradient(top, #70d900, #57a900);
+  background-image: linear-gradient(top, #70d900, #57a900);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#70d900', endColorstr='#57a900', GradientType=0);
+}
+
+.btn-success:hover,
+.btn-success:active,
+.btn-success.active,
+.btn-success.disabled,
+.btn-success[disabled] {
+  background-color: #57a900;
+}
+
+.btn-success:active, .btn-success.active {
+  background-color: #57a900;
+}
+*/

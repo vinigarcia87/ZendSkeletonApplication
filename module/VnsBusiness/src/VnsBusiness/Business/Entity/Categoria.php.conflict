@@ -1,0 +1,44 @@
+<?php
+namespace VnsBusiness\Business\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+
+/**
+ * Categorias de um lançamento bancario
+ *
+ * @ORM\Entity
+ * @ORM\Table(name="tb_categorias")
+ * @property int $id
+ * @property string $descricao
+ * @property ArrayCollection $lancamentos
+ */
+class Categoria
+{
+    /**
+     * Primary Identifier
+     *
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     * @var integer
+     * @access protected
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     * @var string
+     * @access protected
+     */
+    private $descricao;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Lancamento", mappedBy="categoria")
+     **/
+    private $lancamentos;
+
+    public function __construct() {
+        $this->lancamentos = new ArrayCollection();
+    }
+}
