@@ -9,7 +9,7 @@
     "homepage": "http://framework.zend.com/",
     "require": {
         "php": ">=5.3.3",
-        "zendframework/zendframework": "2.2.*"
+        "zendframework/zendframework": "2.3.*"
 		
 		,"zendframework/zend-developer-tools": "dev-master"
 		,"zendframework/zftool": "dev-master"
@@ -17,10 +17,10 @@
 		,"dlu/dluphpsettings": "dev-master"
                 
 		,"doctrine/doctrine-orm-module": "0.*"
-		
-		,"dompdf/dompdf": "dev-master"
+
+		,"phpoffice/phpexcel": "dev-master"
+
 		,"dino/dompdf-module": "dev-master"
 		
-		,"phpoffice/phpexcel": "dev-master"
     }
 }
